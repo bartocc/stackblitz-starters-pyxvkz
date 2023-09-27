@@ -25,6 +25,6 @@
   },
   "stackblitz": {
     "installDependencies": true,
-    "startCommand": false
+    "startCommand": "pnpm --filter my-addon build:js"
   }
 }
