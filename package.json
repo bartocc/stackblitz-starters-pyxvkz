@@ -22,5 +22,9 @@
     "overrides": {
       "@types/eslint": "^7.0.0"
     }
+  },
+  "stackblitz": {
+    "installDependencies": false,
+    "startCommand": "echo foo"
   }
 }
