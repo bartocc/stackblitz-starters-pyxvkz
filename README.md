@@ -1,26 +1,34 @@
-# my-addon
+# Reproduction steps
 
-[Short description of the addon.]
-
-## Compatibility
-
-- Ember.js v4.8 or above
-- Embroider or ember-auto-import v2
-
-## Installation
-
-```
-ember install my-addon
+```shell
+pnpm install
 ```
 
-## Usage
+## Expected behaviour
 
-[Longer description of how to use the addon in apps.]
+The built file `my-addon/dist/index.js` should contain
 
-## Contributing
+```js
+import Component from '@glimmer/component';
 
-See the [Contributing](CONTRIBUTING.md) guide for details.
+class Foo extends Component {}
 
-## License
+export { Foo as default };
+//# sourceMappingURL=index.js.map
+```
 
-This project is licensed under the [MIT License](LICENSE.md).
+## Actual behaviour
+
+The built file `my-addon/dist/index.js` will contain
+
+```js
+import '@glint/template';
+import Component from '@glimmer/component';
+
+class Foo extends Component {}
+
+export { Foo as default };
+//# sourceMappingURL=index.js.map
+```
+
+The line `import '@glint/template';` should not be there
