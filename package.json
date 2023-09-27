@@ -24,7 +24,7 @@
     }
   },
   "stackblitz": {
-    "installDependencies": false,
-    "startCommand": "echo foo"
+    "installDependencies": true,
+    "startCommand": false
   }
 }
