@@ -1,0 +1,3 @@
+packages:
+  - 'my-addon'
+  - 'test-app'
